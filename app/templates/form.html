@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Введите данные для формирования отчета</title>
+</head>
+<body>
+    <h1>Ввод данных</h1>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        <p>
+            {{form.name.label}} <br>
+            {{form.name(size=32)}}
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.lname.label}} <br>
+            {{form.lname(size=32)}}
+            {% for error in form.lname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.mname.label}} <br>
+            {{form.mname(size=32)}}
+            {% for error in form.mname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.executor_name.label}} <br>
+            {{form.executor_name(size=32)}}
+            {% for error in form.executor_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.service_name.label}} <br>
+            {{form.service_name(size=32)}}
+            {% for error in form.service_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.date.label}} <br>
+            {{form.date(size=32)}}
+            {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
