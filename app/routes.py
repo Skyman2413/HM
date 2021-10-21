@@ -1,4 +1,6 @@
-from flask import render_template, redirect, send_file
+import io
+
+from flask import render_template, redirect, send_file, make_response
 
 from app import app, excel
 from app.forms import InfoForm
@@ -15,11 +17,13 @@ def index():
             "Дата Выставления": f'{form.date.data}'
         }
         excel.form_file(data)
-        redirect('download')
+        return redirect('/download')
     return render_template('form.html', form=form)
 
 
 @app.route('/download')
 def download():
-    path = "/test.xlsx"
-    return send_file(path, as_attachment=True)
+    fp = open("test.xlsx", 'rb')
+    bytes = fp.read()
+    fp.close()
+    return send_file(io.BytesIO(bytes), as_attachment=True, attachment_filename='test.xlsx')
