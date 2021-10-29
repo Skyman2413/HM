@@ -23,7 +23,7 @@ def index():
 
 @app.route('/download')
 def download():
-    fp = open("test.xlsx", 'rb')
+    fp = open("test.xls", 'rb')
     bytes = fp.read()
     fp.close()
     return send_file(io.BytesIO(bytes), as_attachment=True, attachment_filename='test.xlsx')
