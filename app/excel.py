@@ -23,7 +23,7 @@ def fill_file(data):
     # should be in try-catch block
     sheet['V9'].value = price[f'{data["Услуга"]}']
     sheet['AD9'].value = price[f'{data["Услуга"]}']
-    sheet['AD11'].value = "=AD9*0,13"
+    sheet['AD11'].value = "=AD9*0.13/1.13"
     sheet['AD12'].value = price[f'{data["Услуга"]}']
     sheet['F6'].value = data["Исполнитель"]
 
