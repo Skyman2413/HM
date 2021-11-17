@@ -13,6 +13,7 @@ sheet_name = wb.sheetnames
 sheet = wb[sheet_name[0]]
 with open("price.json", "r", encoding='utf-8') as content:
     price = json.load(content)
+    'asdf'
 
 
 def fill_file(data):
